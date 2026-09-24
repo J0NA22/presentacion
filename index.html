@@ -147,6 +147,97 @@ footer.note{margin-top:34px;color:var(--muted);font-size:12px;border-top:1px sol
 .figure img{display:block;width:100%;height:auto}
 .figure .cap{padding:10px 14px;font-size:12px;color:var(--muted);font-family:'IBM Plex Mono';border-top:1px solid var(--line)}
 .hero-fig{max-width:420px;margin-top:26px}
+
+/* interactive Q&A cards */
+.qa-list{display:flex;flex-direction:column;gap:8px;margin-top:18px}
+.qa-item{border:1px solid var(--line);border-radius:8px;background:var(--panel);cursor:pointer;overflow:hidden}
+.qa-item .qhead{display:flex;align-items:center;gap:12px;padding:13px 16px}
+.qa-item .qn{font-family:'IBM Plex Mono';color:var(--muted);font-size:12px;flex-shrink:0;width:20px}
+.qa-item .qtxt{font-size:14px;font-weight:600;flex:1}
+.qa-item .qtag{font-family:'IBM Plex Mono';font-size:10px;color:var(--teal);background:#1E2A3C;padding:2px 8px;border-radius:4px;white-space:nowrap;flex-shrink:0}
+.qa-item .plus{color:var(--teal);font-family:'IBM Plex Mono';flex-shrink:0}
+.qa-item .qa{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.qa-item.on .qa{max-height:140px}
+.qa-item .qa-in{padding:0 16px 14px 48px;color:var(--muted);font-size:13px;line-height:1.5;border-top:1px solid var(--line);margin-top:0;padding-top:10px}
+
+/* timeline v2 (no importance column) */
+.tl2{margin-top:12px;border-left:2px solid var(--line);padding-left:22px}
+.tl2-item{position:relative;padding-bottom:18px;cursor:pointer}
+.tl2-item::before{content:'';position:absolute;left:-27px;top:4px;width:9px;height:9px;border-radius:50%;background:var(--teal);border:2px solid var(--bg)}
+.tl2-item.k::before{background:var(--amber)}
+.tl2-date{font-family:'IBM Plex Mono';font-size:11.5px;color:var(--amber)}
+.tl2-ev{font-size:14.5px;font-weight:600;margin:3px 0;line-height:1.35}
+.tl2-src{max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--muted);font-size:12.5px;font-family:'IBM Plex Mono'}
+.tl2-item.on .tl2-src{max-height:60px;margin-top:4px}
+
+/* root-cause chain (reuses chain visuals) */
+.whyroot{margin-top:4px;background:#182236;border:1px solid var(--amber);border-radius:8px;padding:15px 18px}
+.whyroot .k{font-family:'IBM Plex Mono';font-size:11px;color:var(--amber);margin-bottom:6px}
+.whyroot p{margin:0;font-size:13.5px;color:var(--ink);line-height:1.55}
+
+/* risk cards */
+.risk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+@media (max-width:900px){.risk-grid{grid-template-columns:1fr}}
+.rcard{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.rcard .rtop{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:9px}
+.rcard h4{margin:0;font-size:14px;line-height:1.3;max-width:70%}
+.rcard .meta{display:flex;gap:16px;margin-bottom:9px}
+.rcard .meta div{font-family:'IBM Plex Mono';font-size:10.5px;color:var(--muted)}
+.rcard .meta b{color:var(--ink);font-weight:500;display:block;font-size:12.5px;font-family:'IBM Plex Sans';margin-top:2px}
+.rcard p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.5}
+.pill{display:inline-block;font-family:'IBM Plex Mono';font-size:10.5px;padding:3px 9px;border-radius:10px;white-space:nowrap;flex-shrink:0}
+.pill.critico{background:#3A2027;color:var(--red)}
+.pill.alto{background:#3A3120;color:var(--amber)}
+.pill.medio{background:#152A32;color:var(--teal)}
+
+/* root-cause classification grid (07) */
+.class-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+@media (max-width:900px){.class-grid{grid-template-columns:1fr}}
+.class-card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 18px}
+.class-card .k{font-family:'IBM Plex Mono';font-size:11px;color:var(--amber);margin-bottom:8px;letter-spacing:.02em}
+.class-card p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.55}
+
+/* controls tabs + list (09) */
+.ctrl-tabs{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
+.ctrl-tab{background:var(--panel);border:1px solid var(--line);color:var(--muted);font-family:'IBM Plex Sans';font-size:13px;padding:8px 16px;border-radius:20px;cursor:pointer}
+.ctrl-tab:hover{color:var(--ink)}
+.ctrl-tab.on{background:#1A2740;border-color:var(--amber);color:var(--ink)}
+.ctrl-list{display:flex;flex-direction:column;gap:8px;margin-top:16px}
+.ctrl-item{border:1px solid var(--line);border-radius:8px;background:var(--panel);cursor:pointer;overflow:hidden}
+.ctrl-item .head{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;gap:12px}
+.ctrl-item .head h4{margin:0;font-size:14px;font-weight:600}
+.ctrl-item .plus{color:var(--teal);font-family:'IBM Plex Mono';flex-shrink:0}
+.ctrl-item .spec{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.ctrl-item.on .spec{max-height:120px}
+.ctrl-item .spec-in{padding:0 16px 14px;color:var(--muted);font-size:13px;line-height:1.5;border-top:1px solid var(--line);margin-top:0;padding-top:10px}
+
+/* NIST rows (10) */
+.nist2{display:flex;flex-direction:column;gap:10px;margin-top:22px}
+.nist-row{display:grid;grid-template-columns:130px 1fr 1fr;gap:18px;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:15px 18px;align-items:start}
+@media (max-width:900px){.nist-row{grid-template-columns:1fr;gap:8px}}
+.nist-row .fn{font-family:'Barlow Condensed';font-size:20px;color:var(--teal);font-weight:600;line-height:1.1}
+.nist-row .fn small{display:block;font-family:'IBM Plex Mono';font-size:10.5px;color:var(--muted);font-weight:400;margin-top:3px;letter-spacing:.02em}
+.nist-row .col-lbl{font-family:'IBM Plex Mono';font-size:10.5px;color:var(--amber);margin-bottom:5px;letter-spacing:.02em}
+.nist-row p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+
+/* lessons learned two-column (11) */
+.lessons2{display:grid;grid-template-columns:1.3fr 1fr;gap:36px;margin-top:20px}
+@media (max-width:900px){.lessons2{grid-template-columns:1fr;gap:24px}}
+.lessons2 h3{font-size:15px;color:var(--teal);margin:0 0 12px;font-weight:600}
+.lessons2 ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:11px}
+.lessons2 li{font-size:13.5px;line-height:1.55;color:var(--ink)}
+.lessons2 li::marker{color:var(--amber)}
+
+/* audit proposal phases (12) */
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+@media (max-width:1100px){.phases{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:700px){.phases{grid-template-columns:1fr}}
+.phase{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 18px}
+.ph-h{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+.ph-n{font-family:'IBM Plex Mono';color:var(--amber);font-size:13px}
+.ph-t{font-family:'Barlow Condensed';font-size:17px;font-weight:600;color:var(--ink)}
+.phase ul{margin:0;padding-left:16px;display:flex;flex-direction:column;gap:6px}
+.phase li{font-size:12.5px;color:var(--muted);line-height:1.45}
 </style>
 </head>
 <body>
@@ -156,14 +247,19 @@ footer.note{margin-top:34px;color:var(--muted);font-size:12px;border-top:1px sol
     <button class="railbtn" data-i="0"><span class="n">00</span> Portada</button>
     <button class="railbtn" data-i="1"><span class="n">01</span> Marco conceptual</button>
     <button class="railbtn" data-i="2"><span class="n">02</span> La compañía</button>
-    <button class="railbtn" data-i="3"><span class="n">03</span> Cronología</button>
-    <button class="railbtn" data-i="4"><span class="n">04</span> Cadena del ataque</button>
-    <button class="railbtn" data-i="5"><span class="n">05</span> Hallazgos</button>
-    <button class="railbtn" data-i="6"><span class="n">06</span> NIST CSF</button>
-    <button class="railbtn" data-i="7"><span class="n">07</span> Lecciones</button>
+    <button class="railbtn" data-i="3"><span class="n">03</span> Cómo lo detecta una auditoría</button>
+    <button class="railbtn" data-i="4"><span class="n">04</span> Cronología</button>
+    <button class="railbtn" data-i="5"><span class="n">05</span> Cadena del ataque</button>
+    <button class="railbtn" data-i="6"><span class="n">06</span> Hallazgos</button>
+    <button class="railbtn" data-i="7"><span class="n">07</span> Causa raíz</button>
+    <button class="railbtn" data-i="8"><span class="n">08</span> Evaluación de riesgos</button>
+    <button class="railbtn" data-i="9"><span class="n">09</span> Controles de seguridad</button>
+    <button class="railbtn" data-i="10"><span class="n">10</span> NIST CSF</button>
+    <button class="railbtn" data-i="11"><span class="n">11</span> Lecciones</button>
+    <button class="railbtn" data-i="12"><span class="n">12</span> Propuesta de auditoría</button>
     <div id="progress">
       <div class="bar"><div class="fill" id="fill"></div></div>
-      <div class="lbl" id="lbl">1 / 8</div>
+      <div class="lbl" id="lbl">1 / 13</div>
     </div>
   </nav>
 
@@ -223,44 +319,143 @@ footer.note{margin-top:34px;color:var(--muted);font-size:12px;border-top:1px sol
     </section>
 
     <section class="slide" data-s="3">
-      <div class="eyebrow">03 · CRONOLOGÍA — toca cada evento</div>
-      <h2 class="stitle">De la intrusión a la incautación judicial</h2>
-      <div class="timeline" id="timeline"></div>
+      <div class="eyebrow">03 · METODOLOGÍA FORENSE</div>
+      <h2 class="stitle">¿Cómo una auditoría ayuda a detectar qué ocurrió?</h2>
+      <p class="lede" style="font-size:14.5px">Un equipo de auditoría o de respuesta a incidentes reconstruye lo ocurrido correlacionando logs VPN/AD, firewall y proxy, EDR, tráfico de red, timestamps, hashes forenses y el ciclo de vida de cuentas. A partir de esa evidencia responde de forma metódica estas preguntas:</p>
+      <div class="qa-list" id="qaList"></div>
     </section>
 
     <section class="slide" data-s="4">
-      <div class="eyebrow">04 · CADENA DEL ATAQUE — toca cada paso</div>
+      <div class="eyebrow">04 · RECONSTRUCCIÓN DE LÍNEA TEMPORAL</div>
+      <h2 class="stitle">De la intrusión a la incautación judicial</h2>
+      <p class="lede" style="font-size:13.5px">Solo fechas y eventos respaldados por fuentes primarias y técnicas. Cuando la hora exacta no está públicamente disponible, se indica expresamente.</p>
+      <div class="tl2" id="tl2List"></div>
+    </section>
+
+    <section class="slide" data-s="5">
+      <div class="eyebrow">05 · CADENA DEL ATAQUE — toca cada paso</div>
       <h2 class="stitle">Reconstrucción MITRE ATT&CK para ICS</h2>
       <p class="lede" style="font-size:14.5px">Según el análisis técnico del Idaho National Laboratory (2022), con metodología CyOTE. Los códigos entre paréntesis son técnicas del marco ATT&CK for ICS.</p>
       <div class="chain" id="chain"></div>
     </section>
 
-    <section class="slide" data-s="5">
-      <div class="eyebrow">05 · HALLAZGOS DE AUDITORÍA</div>
+    <section class="slide" data-s="6">
+      <div class="eyebrow">06 · HALLAZGOS DE AUDITORÍA</div>
       <h2 class="stitle">Lo que un examen posterior encontró</h2>
       <div class="findings" id="findings"></div>
     </section>
 
-    <section class="slide" data-s="6">
-      <div class="eyebrow">06 · NIST CYBERSECURITY FRAMEWORK v1.1 — toca cada función</div>
-      <h2 class="stitle">El caso mapeado a las cinco funciones</h2>
-      <div class="nist" id="nist"></div>
+    <section class="slide" data-s="7">
+      <div class="eyebrow">07 · MÉTODO DE LOS 5 PORQUÉS</div>
+      <h2 class="stitle">Análisis de causa raíz</h2>
+      <p class="lede" style="font-size:13.5px">Los primeros niveles se sustentan en fuente primaria; los más profundos se presentan como hipótesis razonables, no como hechos confirmados.</p>
+      <div class="chain" id="whyChain"></div>
+      <div class="whyroot"><div class="k">CAUSA RAÍZ (SÍNTESIS ACADÉMICA)</div><p>Convergencia de una falla de gestión del ciclo de vida de identidades (cuenta no desactivada), una falla de control de acceso (ausencia de MFA) y una probable insuficiencia de monitoreo conductual sobre accesos remotos autenticados.</p></div>
+      <div class="class-grid">
+        <div class="class-card"><div class="k">CAUSA TÉCNICA</div><p>Ausencia de autenticación multifactor en el punto de acceso remoto explotado (confirmado).</p></div>
+        <div class="class-card"><div class="k">CAUSA ORGANIZACIONAL / DE PROCESO</div><p>Ausencia aparente de un proceso robusto de gestión del ciclo de vida de cuentas (recomendación derivada).</p></div>
+        <div class="class-card"><div class="k">CAUSA DE CONTROL</div><p>Insuficiencia de controles compensatorios ante una credencial única válida (confirmado indirectamente).</p></div>
+        <div class="class-card"><div class="k">CAUSA DE DETECCIÓN</div><p>Ausencia de indicios públicos de monitoreo conductual que acortara la ventana de nueve días (hipótesis fundamentada, INL).</p></div>
+        <div class="class-card" style="grid-column:1/-1"><div class="k">FACTOR CONTRIBUYENTE</div><p>La naturaleza crítica y de alta visibilidad de la organización incrementó tanto el atractivo del objetivo como la presión para pagar rápidamente y restaurar el servicio.</p></div>
+      </div>
     </section>
 
-    <section class="slide" data-s="7">
-      <div class="eyebrow">07 · LECCIONES APRENDIDAS</div>
-      <h2 class="stitle">Aplicables a cualquier organización</h2>
-      <ul class="lessons">
-        <li>La <b>autenticación multifactor</b> debe ser obligatoria en todo acceso remoto, sin excepciones por "bajo perfil".</li>
-        <li>Las cuentas que dejan de usarse deben <b>desactivarse sistemáticamente</b> — no quedar activas por inercia.</li>
-        <li>Monitorear accesos remotos <b>ya autenticados</b> es tan importante como impedir los no autorizados.</li>
-        <li>La <b>segmentación IT/OT</b> reduce el riesgo de que un incidente administrativo escale a sistemas físicos.</li>
-        <li>Los <b>respaldos aislados e inmutables</b> reducen la presión de pagar un rescate bajo incertidumbre.</li>
-        <li>Una respuesta eficaz depende de protocolos ya definidos de contención y notificación a autoridades.</li>
-        <li>La continuidad del negocio debe cubrir también los sistemas de TI administrativos, no solo los operativos.</li>
-        <li>Las auditorías periódicas siguen siendo la principal herramienta para detectar riesgo antes de que sea explotado.</li>
-      </ul>
+    <section class="slide" data-s="8">
+      <div class="eyebrow">08 · ANÁLISIS CUALITATIVO ACADÉMICO</div>
+      <h2 class="stitle">Evaluación de riesgos</h2>
+      <p class="lede" style="font-size:13px">No reproduce una clasificación oficial de riesgos de Colonial Pipeline; ninguna fuente consultada publica una matriz de riesgos oficial de la compañía.</p>
+      <div class="risk-grid" id="riskGrid"></div>
+    </section>
+
+    <section class="slide" data-s="9">
+      <div class="eyebrow">09 · RECOMENDACIONES DERIVADAS — toca cada control para ver su especificación</div>
+      <h2 class="stitle">Controles que podrían haber reducido el riesgo</h2>
+      <div class="ctrl-tabs" id="ctrlTabs">
+        <button class="ctrl-tab on" data-c="prev">Preventivos</button>
+        <button class="ctrl-tab" data-c="det">Detectivos</button>
+        <button class="ctrl-tab" data-c="corr">Correctivos</button>
+      </div>
+      <div class="ctrl-list" id="ctrlList"></div>
+    </section>
+
+    <section class="slide" data-s="10">
+      <div class="eyebrow">10 · NIST CYBERSECURITY FRAMEWORK v1.1</div>
+      <h2 class="stitle">El caso mapeado a las cinco funciones</h2>
+      <p class="lede" style="font-size:13px">Versión vigente en 2021, previa a la v2.0 (2024), para mantener coherencia temporal.</p>
+      <div class="nist2" id="nist"></div>
+    </section>
+
+    <section class="slide" data-s="11">
+      <div class="eyebrow">11 · LECCIONES APRENDIDAS</div>
+      <h2 class="stitle">Generales y específicas del caso</h2>
+      <div class="lessons2">
+        <div>
+          <h3>Generales (aplicables a cualquier organización)</h3>
+          <ul>
+            <li>La <b>autenticación multifactor</b> debe ser obligatoria en todo punto de acceso remoto, sin excepciones para cuentas de "bajo perfil".</li>
+            <li>La gestión de credenciales debe incluir la <b>desactivación sistemática</b> de cuentas que dejan de utilizarse y verificar que no coincidan con filtraciones públicas.</li>
+            <li>Monitorear accesos remotos <b>ya autenticados</b> es tan importante como prevenir los no autorizados.</li>
+            <li>La <b>segmentación IT/OT</b> reduce el riesgo de que un incidente administrativo escale a sistemas de control físico.</li>
+            <li>Los <b>respaldos aislados e inmutables</b> reducen la presión de pagar un rescate bajo incertidumbre.</li>
+            <li>Una respuesta eficaz depende de protocolos ya definidos de contención, comunicación y notificación a autoridades.</li>
+            <li>La continuidad del negocio debe cubrir también los sistemas de TI administrativos, no solo los operativos.</li>
+            <li>Las <b>auditorías periódicas</b> son la principal herramienta para detectar riesgo antes de que sea explotado.</li>
+            <li>La gestión de riesgos de terceros/proveedores sigue siendo relevante para cadenas de suministro críticas.</li>
+            <li>La capacitación del personal reduce la reutilización de contraseñas entre servicios personales y corporativos.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Específicas de Colonial Pipeline (no generalizables sin matices)</h3>
+          <ul>
+            <li>El vector confirmado fue una <b>cuenta VPN heredada sin MFA</b> — no se confirmó públicamente el uso de phishing, a diferencia de lo que afirman algunas fuentes secundarias no verificadas.</li>
+            <li>La red de tecnología operativa <b>no fue cifrada directamente</b> por el ransomware (CISA/FBI); la interrupción fue una decisión preventiva de la propia compañía.</li>
+            <li>La recuperación parcial del rescate fue posible por la <b>trazabilidad pública de la cadena de bloques de Bitcoin</b> — una circunstancia técnica no generalizable a todos los pagos ni criptomonedas.</li>
+          </ul>
+        </div>
+      </div>
       <footer class="note">Trabajo con fines académicos, basado exclusivamente en fuentes públicas verificables: testimonios oficiales, avisos gubernamentales, documentos judiciales e informes técnicos federales. No reproduce un informe de auditoría real de Colonial Pipeline.</footer>
+    </section>
+
+    <section class="slide" data-s="12">
+      <div class="eyebrow">12 · AUDITORÍA HIPOTÉTICA APLICABLE</div>
+      <h2 class="stitle">Propuesta de auditoría de ciberseguridad</h2>
+      <p class="lede" style="font-size:13.5px">Aplicable por una organización de infraestructura crítica similar tras un incidente de esta naturaleza, o como ejercicio preventivo.</p>
+      <div class="phases">
+        <div class="phase"><div class="ph-h"><span class="ph-n">01</span><span class="ph-t">Planificación</span></div><ul>
+          <li>Alcance: redes de TI y OT, acceso remoto, gestión de identidades y copias de respaldo</li>
+          <li>Objetivos: verificar controles de acceso, segmentación, monitoreo y recuperación</li>
+          <li>Activos: servidores de autenticación, VPN, Active Directory, SCADA/ICS, repositorios de respaldo</li>
+          <li>Responsables: auditoría interna/externa con patrocinio de la alta dirección y coordinación TI/OT</li>
+        </ul></div>
+        <div class="phase"><div class="ph-h"><span class="ph-n">02</span><span class="ph-t">Recopilación de evidencia</span></div><ul>
+          <li>Logs de autenticación VPN, Active Directory y servidores críticos de los últimos 12 meses</li>
+          <li>Configuraciones de firewall, reglas de segmentación y listas de control de acceso</li>
+          <li>Inventario de cuentas activas: última actividad y nivel de privilegio</li>
+          <li>Verificación de MFA en dispositivos con acceso remoto autorizado</li>
+        </ul></div>
+        <div class="phase"><div class="ph-h"><span class="ph-n">03</span><span class="ph-t">Evaluación</span></div><ul>
+          <li>Escaneo técnico y revisión manual de configuraciones</li>
+          <li>Efectividad real de los controles declarados vs. implementación observada</li>
+          <li>Cuentas huérfanas, privilegios excesivos, ausencia de MFA</li>
+          <li>Cobertura de SIEM/EDR y reglas de alerta; pruebas de restauración de respaldos</li>
+        </ul></div>
+        <div class="phase"><div class="ph-h"><span class="ph-n">04</span><span class="ph-t">Análisis</span></div><ul>
+          <li>Correlación de eventos entre distintas fuentes de log</li>
+          <li>Reconstrucción de una línea temporal integrada de hallazgos</li>
+          <li>Análisis de causa raíz de las deficiencias identificadas</li>
+          <li>Estimación del impacto potencial de cada vulnerabilidad no mitigada</li>
+        </ul></div>
+        <div class="phase"><div class="ph-h"><span class="ph-n">05</span><span class="ph-t">Informe</span></div><ul>
+          <li>Documentación formal de hallazgos con evidencia asociada</li>
+          <li>Clasificación de riesgos por probabilidad, impacto y severidad</li>
+          <li>Recomendaciones priorizadas, con responsables y plazos sugeridos</li>
+        </ul></div>
+        <div class="phase"><div class="ph-h"><span class="ph-n">06</span><span class="ph-t">Seguimiento</span></div><ul>
+          <li>Verificación de la implementación efectiva de las recomendaciones acordadas</li>
+          <li>Pruebas de validación posteriores a la remediación (retesting)</li>
+          <li>Programación de una nueva auditoría periódica, alineada con mejora continua</li>
+        </ul></div>
+      </div>
     </section>
   </main>
 </div>
@@ -269,17 +464,6 @@ footer.note{margin-top:34px;color:var(--muted);font-size:12px;border-top:1px sol
 <button class="arrow" id="nextBtn" aria-label="Siguiente">›</button>
 
 <script>
-const TL = [
- {d:'29 abr 2021', t:'Acceso inicial', x:'VPN con credenciales válidas de una cuenta legacy sin MFA. Fuente: Idaho National Laboratory (2022).', h:1},
- {d:'7 may · 05:00', t:'Nota de rescate descubierta', x:'Un empleado la encuentra en un sistema de TI. Testimonio de J. Blount ante el Senado (2021).', h:1},
- {d:'7 may · 06:10', t:'Oleoducto detenido por completo', x:'Decisión preventiva para aislar la red OT ante la incertidumbre sobre el alcance del compromiso.', h:1},
- {d:'7 may 2021', t:'Notificación al FBI y contratación de Mandiant', x:'La notificación temprana fue clave para la posterior recuperación parcial del rescate (DOJ, 2021).', h:0},
- {d:'8 may 2021', t:'Pago de 75 BTC (~US$4.4M)', x:'El CEO lo describió como una de las decisiones más difíciles de su carrera.', h:1},
- {d:'11 may 2021', t:'Aviso conjunto CISA–FBI (AA21-131A)', x:'Primera guía técnica oficial sobre DarkSide; confirma que la red OT no fue cifrada directamente.', h:0},
- {d:'12 may 2021', t:'Reinicio de operaciones', x:'Sistemas automatizados restablecidos; fin de la fase de interrupción operativa.', h:0},
- {d:'7 jun 2021', t:'DOJ incauta 63.7 BTC', x:'Rastreo del libro mayor público de Bitcoin hasta una dirección con llave privada en poder del FBI.', h:0},
- {d:'8 jun 2021', t:'Testimonio del CEO ante el Senado', x:'Principal fuente primaria testimonial de todo el caso.', h:0},
-];
 const CHAIN = [
  {n:'Acceso inicial vía VPN legacy sin MFA', c:'T0822', x:'Credenciales válidas pero de una cuenta que no debía estar activa.'},
  {n:'Persistencia con cuenta válida', c:'T0859', x:'Al usar credenciales legítimas, la conexión no generó alertas automáticas.'},
@@ -300,21 +484,96 @@ const FIND = [
  {id:'H-06',t:'Segmentación IT/OT no verificada públicamente',s:'Media',x:'CISA/FBI confirmaron que la red OT no fue cifrada — no que la segmentación fuera insuficiente.'},
 ];
 const NIST = [
- {f:'Identificar',x:'No hay evidencia pública de que la cuenta VPN legacy se hubiera catalogado como activo de riesgo.'},
- {f:'Proteger',x:'Ausencia confirmada de MFA en la cuenta explotada; cuenta heredada sin desactivar.'},
- {f:'Detectar',x:'El incidente lo descubrió un operador humano, no una alerta automatizada.'},
- {f:'Responder',x:'Notificación rápida al FBI y contratación de Mandiant — elemento positivo confirmado.'},
- {f:'Recuperar',x:'Sistemas automatizados restablecidos en 5 días; se pagó el rescate ante la incertidumbre.'},
+ {f:'Identificar',en:'Identify',rel:'No hay evidencia pública de que la cuenta VPN legacy se hubiera catalogado como activo de riesgo antes del incidente.',ctl:'Inventario de activos y cuentas de acceso remoto; evaluación periódica de riesgos sobre accesos privilegiados.'},
+ {f:'Proteger',en:'Protect',rel:'Ausencia confirmada de MFA en la cuenta explotada; cuenta heredada sin desactivar.',ctl:'MFA obligatoria; gestión del ciclo de vida de identidades; segmentación IT/OT.'},
+ {f:'Detectar',en:'Detect',rel:'El incidente fue descubierto por observación humana directa de la nota de rescate, no por alertas automatizadas; el INL identificó observables de alta perceptibilidad no aprovechadas.',ctl:'SIEM / EDR con reglas de comportamiento anómalo sobre accesos remotos.'},
+ {f:'Responder',en:'Respond',rel:'Notificación rápida al FBI y contratación de Mandiant dentro de las horas siguientes a la detección (elemento positivo confirmado).',ctl:'Mantener y fortalecer protocolos de notificación temprana a autoridades y forenses externos.'},
+ {f:'Recuperar',en:'Recover',rel:'Recuperación completa de sistemas automatizados en cinco días; decisión de pagar el rescate ante incertidumbre sobre capacidad de recuperación propia.',ctl:'Copias de respaldo probadas y aisladas que reduzcan la dependencia de negociar con el atacante.'},
+];
+const CTRL = {
+ prev:[
+  {n:'Autenticación multifactor (MFA) obligatoria',x:'En todo acceso remoto, incluyendo VPN — sin excepciones para cuentas de "bajo perfil".'},
+  {n:'Gestión de identidades y accesos (IAM)',x:'Revisión periódica y desactivación automática de cuentas inactivas.'},
+  {n:'Principio de mínimo privilegio',x:'Limita los permisos de cada cuenta a lo estrictamente necesario.'},
+  {n:'Segmentación de red robusta IT/OT',x:'Separación entre los entornos de TI y de tecnología operativa.'},
+  {n:'Gestión de vulnerabilidades y parches',x:'Aplicación oportuna en sistemas expuestos a Internet.'},
+  {n:'Hardening de configuraciones',x:'En servidores, estaciones de trabajo y dispositivos de red.'},
+  {n:'Políticas de acceso remoto restrictivas',x:'Por horario, geolocalización o dispositivo autorizado.'},
+ ],
+ det:[
+  {n:'SIEM',x:'Sistema de gestión de eventos e información de seguridad que correlaciona logs de múltiples fuentes.'},
+  {n:'EDR (Endpoint Detection and Response)',x:'Identifica comportamientos anómalos, como herramientas de escalamiento de privilegios.'},
+  {n:'IDS / IPS',x:'Detección y prevención de intrusiones en los puntos de entrada de la red.'},
+  {n:'Monitoreo continuo de logs',x:'Reglas de alerta ante patrones de acceso VPN inusuales.'},
+  {n:'UEBA (detección de comportamiento anómalo)',x:'Identifica volúmenes de transferencia de datos atípicos, como en la exfiltración observada.'},
+ ],
+ corr:[
+  {n:'Copias de respaldo air-gapped e inmutables',x:'Con pruebas periódicas de restauración.'},
+  {n:'Plan de recuperación ante desastres (DRP/BCP)',x:'Continuidad del negocio con roles y procedimientos claramente definidos.'},
+  {n:'Plan formal de respuesta a incidentes',x:'Protocolos de contención rápida y aislamiento de sistemas comprometidos.'},
+  {n:'Procedimientos de restauración independientes',x:'Que no dependan de la herramienta de descifrado provista por el atacante.'},
+ ],
+};
+
+const QA = [
+ {q:'¿Cómo ingresó el atacante?',tag:'Logs VPN / AD',a:'Conexión VPN con credenciales válidas de cuenta legacy (Blount, 2021; INL, 2022).'},
+ {q:'¿Qué cuenta utilizó?',tag:'Logs de autenticación',a:'Cuenta de empleado con perfil VPN heredado, sin MFA (Blount, 2021).'},
+ {q:'¿Desde dónde se produjo el acceso?',tag:'Geolocalización IP',a:'No confirmado públicamente con precisión.'},
+ {q:'¿Qué sistemas fueron afectados?',tag:'Logs de servidores, EDR',a:'Red de TI (facturación, administración); red OT no cifrada directamente (CISA/FBI, 2021).'},
+ {q:'¿Qué acciones realizó el atacante?',tag:'Logs de red, C2, EDR',a:'Escalamiento de privilegios, exfiltración (~100 GB), cifrado, eliminación de shadow copies (INL, 2022).'},
+ {q:'¿Cuándo ocurrió cada etapa?',tag:'Timestamps',a:'Acceso inicial 29-abr; evento disparador 7-may 05:00 a.m. (INL, 2022; Blount, 2021).'},
+ {q:'¿Qué información fue afectada?',tag:'Inventario de datos, DLP',a:'~100 GB de datos corporativos exfiltrados (INL, 2022).'},
+ {q:'¿Qué controles fallaron?',tag:'Revisión de configuración',a:'Ausencia de MFA en VPN; cuenta legacy activa (Blount, 2021).'},
+ {q:'¿Cómo se pudo detectar antes?',tag:'Análisis retrospectivo',a:'24 observables de alta perceptibilidad en los 9 días previos (INL, 2022).'},
+ {q:'¿Qué medidas se recomiendan?',tag:'Síntesis de hallazgos',a:'Ver controles recomendados (sección 09).'},
+];
+const TL2 = [
+ {d:'29 abr. 2021 (hora no esp.)',ev:'Acceso inicial de los atacantes a la red empresarial mediante VPN con credenciales válidas de cuenta legacy',src:'Idaho National Laboratory (2022)',k:1},
+ {d:'7 may. 2021, ~05:00 a.m.',ev:'Un empleado descubre una nota de rescate en un sistema de la red de TI',src:'Blount (2021)',k:1},
+ {d:'7 may. 2021, ~06:10 a.m.',ev:'El oleoducto completo se encuentra detenido de forma preventiva',src:'Idaho National Laboratory (2022)',k:1},
+ {d:'7 may. 2021',ev:'Colonial Pipeline notifica a las autoridades federales (FBI) y contrata a Mandiant',src:'U.S. Dept. of Justice (2021); INL (2022)',k:0},
+ {d:'8 may. 2021',ev:'Colonial Pipeline paga un rescate de 75 bitcoins (~4.4 millones de USD)',src:'Blount (2021); U.S. Dept. of Justice (2021)',k:1},
+ {d:'9 may. 2021',ev:'El presidente Biden declara el estado de emergencia',src:'Cobertura periodística contemporánea',k:0},
+ {d:'11 may. 2021',ev:'CISA y el FBI publican el aviso conjunto de ciberseguridad AA21-131A',src:'CISA & FBI (2021)',k:0},
+ {d:'12 may. 2021',ev:'Firma de la Orden Ejecutiva 14028 sobre mejora de la ciberseguridad nacional',src:'Cobertura especializada; orden ejecutiva citada por fuentes oficiales',k:0},
+ {d:'12 may. 2021',ev:'Colonial Pipeline reinicia operaciones y restablece los sistemas automatizados',src:'Idaho National Laboratory (2022)',k:0},
+ {d:'26 may. 2021',ev:'TSA emite la Directiva de Seguridad Pipeline-2021-01',src:'Federal Register (2021); National Security Archive',k:0},
+ {d:'7 jun. 2021',ev:'El Departamento de Justicia anuncia la incautación de 63.7 BTC del pago del rescate',src:'U.S. Department of Justice (2021)',k:0},
+ {d:'8 jun. 2021',ev:'El CEO de Colonial Pipeline testifica ante el Senado',src:'U.S. Senate Committee on Homeland Security and Governmental Affairs (2021)',k:0},
+ {d:'19 jul. 2021',ev:'TSA emite la Directiva de Seguridad Pipeline-2021-02 (medidas adicionales)',src:'GlobalSecurity.org citando comunicado oficial de TSA/DHS',k:0},
+];
+const WHY = [
+ {n:'Problema: ¿qué ocurrió?',tag:'CONFIRMADO',x:'Un atacante obtuvo acceso no autorizado a la red corporativa de Colonial Pipeline.'},
+ {n:'¿Cómo obtuvo acceso?',tag:'CONFIRMADO',x:'Utilizó credenciales válidas de una cuenta VPN que no debía estar activa.'},
+ {n:'¿Por qué la cuenta seguía activa?',tag:'DERIVADO',x:'No existía, o no se aplicaba consistentemente, un proceso de revisión y desactivación de cuentas heredadas.'},
+ {n:'¿Por qué una sola credencial fue suficiente?',tag:'CONFIRMADO',x:'La cuenta no contaba con autenticación multifactor.'},
+ {n:'¿Por qué no se detectó en 9 días?',tag:'HIPÓTESIS',x:'No hay evidencia pública de monitoreo activo de comportamiento anómalo sobre accesos VPN legítimos (INL, 2022).'},
+];
+const RISK = [
+ {n:'Acceso no autorizado vía cuentas de acceso remoto sin MFA',p:'Alta',i:'Alto',lvl:'Crítico',pill:'critico',x:'Fue precisamente el vector confirmado del incidente real (Blount, 2021).'},
+ {n:'Persistencia de cuentas heredadas no desactivadas',p:'Media-Alta',i:'Alto',lvl:'Alto',pill:'alto',x:'Común en organizaciones grandes; en este caso fue explotada directamente.'},
+ {n:'Cifrado y pérdida de disponibilidad en sistemas de TI críticos',p:'Alta',i:'Alto',lvl:'Crítico',pill:'critico',x:'Materializado: forzó la interrupción de operaciones de todo el oleoducto.'},
+ {n:'Propagación de un compromiso desde la red IT hacia la red OT',p:'Media (no mat.)',i:'Muy alto',lvl:'Alto (potencial)',pill:'alto',x:'CISA/FBI confirmaron que la red OT no fue afectada directamente, pero el riesgo motivó la desconexión preventiva.'},
+ {n:'Exfiltración de datos corporativos sensibles',p:'Alta',i:'Medio-Alto',lvl:'Alto',pill:'alto',x:'Materializado: ~100 GB exfiltrados según INL (2022).'},
+ {n:'Presión operativa para pagar el rescate sin agotar alternativas',p:'Alta',i:'Medio',lvl:'Medio-Alto',pill:'medio',x:'El propio CEO reconoció el pago como decisión bajo alta incertidumbre (Blount, 2021).'},
 ];
 
 function build(){
-  document.getElementById('timeline').innerHTML = TL.map((e,i)=>`
-    <div class="tl-item ${e.h?'sev-high':''}" data-i="${i}">
-      <div class="tl-date mono">${e.d}</div>
-      <div class="tl-title">${e.t}</div>
-      <div class="tl-detail">${e.x}</div>
-      <div class="hint">toca para expandir</div>
+  document.getElementById('qaList').innerHTML = QA.map((e,i)=>`
+    <div class="qa-item"><div class="qhead"><span class="qn mono">${String(i+1).padStart(2,'0')}</span><span class="qtxt">${e.q}</span><span class="qtag">${e.tag}</span><span class="plus">+</span></div>
+    <div class="qa"><div class="qa-in">${e.a}</div></div></div>`).join('');
+  document.getElementById('tl2List').innerHTML = TL2.map((e,i)=>`
+    <div class="tl2-item ${e.k?'k':''}" data-i="${i}"><div class="tl2-date mono">${e.d}</div><div class="tl2-ev">${e.ev}</div><div class="tl2-src">${e.src}</div></div>`).join('');
+  document.getElementById('whyChain').innerHTML = WHY.map((e,i)=>`
+    ${i>0?'<div class="chain-conn"></div>':''}
+    <div class="chain-step" data-i="${i}">
+      <div class="idx">${String(i+1).padStart(2,'0')}</div>
+      <div class="body"><h4>${e.n}<span class="tag">${e.tag}</span></h4><p>${e.x}</p></div>
     </div>`).join('');
+  document.getElementById('riskGrid').innerHTML = RISK.map(e=>`
+    <div class="rcard"><div class="rtop"><h4>${e.n}</h4><span class="pill ${e.pill}">${e.lvl}</span></div>
+    <div class="meta"><div>PROBABILIDAD<b>${e.p}</b></div><div>IMPACTO<b>${e.i}</b></div></div>
+    <p>${e.x}</p></div>`).join('');
   document.getElementById('chain').innerHTML = CHAIN.map((e,i)=>`
     ${i>0?'<div class="chain-conn"></div>':''}
     <div class="chain-step" data-i="${i}">
@@ -323,13 +582,31 @@ function build(){
     </div>`).join('');
   document.getElementById('findings').innerHTML = FIND.map(e=>`
     <div class="fcard"><div class="fid mono">${e.id}</div><h4>${e.t}</h4><p>${e.x}</p><span class="sev ${e.s.toLowerCase().includes('alta')?'alta':'media'}">${e.s}</span></div>`).join('');
-  document.getElementById('nist').innerHTML = NIST.map((e,i)=>`
-    <div class="nfn" data-i="${i}"><h4>${e.f}</h4><p>${e.x}</p></div>`).join('');
+  document.getElementById('nist').innerHTML = NIST.map(e=>`
+    <div class="nist-row">
+      <div class="fn">${e.f}<small>${e.en}</small></div>
+      <div><div class="col-lbl">RELACIÓN CON EL CASO</div><p>${e.rel}</p></div>
+      <div><div class="col-lbl">CONTROL / RECOMENDACIÓN</div><p>${e.ctl}</p></div>
+    </div>`).join('');
+  renderCtrl('prev');
 
-  document.querySelectorAll('.tl-item').forEach(el=>el.addEventListener('click',()=>el.classList.toggle('open')));
+  document.querySelectorAll('.qa-item').forEach(el=>el.addEventListener('click',()=>el.classList.toggle('on')));
+  document.querySelectorAll('.tl2-item').forEach(el=>el.addEventListener('click',()=>el.classList.toggle('on')));
   document.querySelectorAll('.chain-step').forEach(el=>el.addEventListener('click',()=>el.classList.toggle('on')));
-  document.querySelectorAll('.nfn').forEach(el=>el.addEventListener('click',()=>el.classList.toggle('on')));
 }
+function renderCtrl(cat){
+  document.getElementById('ctrlList').innerHTML = CTRL[cat].map(e=>`
+    <div class="ctrl-item">
+      <div class="head"><h4>${e.n}</h4><span class="plus">+</span></div>
+      <div class="spec"><div class="spec-in">${e.x}</div></div>
+    </div>`).join('');
+  document.querySelectorAll('.ctrl-item').forEach(el=>el.addEventListener('click',()=>el.classList.toggle('on')));
+}
+document.querySelectorAll('.ctrl-tab').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.ctrl-tab').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  renderCtrl(b.dataset.c);
+}));
 build();
 
 const slides = document.querySelectorAll('.slide');
